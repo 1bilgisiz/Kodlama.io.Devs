@@ -11,10 +11,10 @@ public interface ProgramLanguageRepostory {
 	
 	List<ProgramLanguages> getAll();
 	
-    void add(ProgramLanguages  programLanguages);
-    void delete(int id, String name);
-    void update(int id, String name);
-    ProgramLanguages bring(int id);
-	
+    void updatePlanguage(int language,String newName);
+
+    void addPlanguage(ProgramLanguages language) ;
+
+    void deletePlanguage(int language);
 
 }

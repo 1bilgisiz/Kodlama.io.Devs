@@ -1,6 +1,7 @@
 package kodlama.io.Kodlama.io.Devs.dataAccess.concrets;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -21,31 +22,31 @@ public class InMemeoryProgramLanguagesRepostory implements ProgramLanguageRepost
 	}
 
 	@Override
-	public ProgramLanguages bring(int id) {
-
-		return null;
-	}
-
-	@Override
 	public List<ProgramLanguages> getAll() {
 
 		return languages;
 	}
 
+
+
 	@Override
-	public void add(ProgramLanguages programLanguages) {
-	
+	public void updatePlanguage(int language, String newName) {
+		languages.remove(language);
+		languages.add(new ProgramLanguages(language,newName));
+	}
+
+	@Override
+	public void addPlanguage(ProgramLanguages language)  {
+		languages.add(language);
 		
 	}
 
 	@Override
-	public void delete(int id, String name) {
-
+	public void deletePlanguage(int language) {
+		languages.remove(language);
 	}
 
-	@Override
-	public void update(int id, String name) {
 
-	}
+
 
 }
